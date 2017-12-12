@@ -18,7 +18,7 @@ class Application
       else
         resp.write "Your cart contains #{@@cart.join("\n")}"
       end
-      
+
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
