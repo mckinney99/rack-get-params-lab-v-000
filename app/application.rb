@@ -19,6 +19,10 @@ class Application
         resp.write "Your cart contains #{@@cart.join("\n")}"
       end
 
+    elsif req.path.match(/add/)
+       added_item = req.params["item"]
+       resp.write handle_adding(added_item)
+
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
