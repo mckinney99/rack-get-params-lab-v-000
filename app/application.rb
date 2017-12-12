@@ -33,6 +33,15 @@ class Application
     resp.finish
   end
 
+  def handle_adding(added_item)
+     if @@items.include?(added_item)
+       @@cart << added_item
+       return "added #{added_item}"
+     else
+       return "We don't have that item"
+     end
+   end
+
   def handle_search(search_term)
     if @@items.include?(search_term)
       return "#{search_term} is one of our items"
